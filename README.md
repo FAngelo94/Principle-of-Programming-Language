@@ -10,3 +10,5 @@ This is a set of exercises and usefull link to pass the exam of "Pricipe of prog
 ### Haskell
 * Guide online to learn: http://learnyouahaskell.com/chapters
 * Haskel platform to develop: https://www.haskell.org/platform/
+* Easy guide on github: https://github.com/bitemyapp/learnhaskell
+* Little dictionary with the most important commands: http://zvon.org/comp/r/ref-Haskell.html#intro
