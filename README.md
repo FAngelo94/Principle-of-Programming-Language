@@ -6,3 +6,6 @@ This is a set of exercises and usefull link to pass the exam of "Pricipe of prog
 ### Scheme
 * Program used: DrRacket (https://download.racket-lang.org/)
 * dictionary of commands: https://docs.racket-lang.org/reference/syntax.html?q=cond
+
+### Haskell
+* Guide online to learn: http://learnyouahaskell.com/chapters
