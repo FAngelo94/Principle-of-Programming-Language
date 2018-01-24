@@ -9,3 +9,4 @@ This is a set of exercises and usefull link to pass the exam of "Pricipe of prog
 
 ### Haskell
 * Guide online to learn: http://learnyouahaskell.com/chapters
+* Haskel platform to develop: https://www.haskell.org/platform/
