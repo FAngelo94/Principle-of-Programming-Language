@@ -158,9 +158,11 @@
      (lambda (x)
        (display 4)
        (set! bella x)
-       (display 3)))
+       (x); not print 3 because here I stop the code inside call/cc
+       (display 3)));I never see printed 3
     (display 2)))
 
+;;Example that not work everywhere (on racket yes)
 (define (prova x y)
   (display(+ x y)))
 (define (zio)
