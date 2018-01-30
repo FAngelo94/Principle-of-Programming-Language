@@ -25,3 +25,8 @@ takeOnlyOdd list = [x | x <- list, odd x]
 removeNonUppercase st = [ c | c <- st, c `elem` ['A'..'Z']] 
 --tuples
 takeRightTriangles x = [(a,b,c) | c <- [1..x], b <- [1..c], a <- [1..b], a^2+b^2==c^2]
+
+--SLIDES PROF
+mylength :: [a]->Integer
+mylength [] = 0
+mylength (x:xs) = 1 + mylength xs
