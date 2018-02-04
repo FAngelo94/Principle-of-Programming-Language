@@ -158,7 +158,7 @@
      (lambda (x)
        (display 4)
        (set! bella x)
-       (x); not print 3 because here I stop the code inside call/cc
+       (x (display 88)); not print 3 because here I stop the code inside call/cc
        (display 3)));I never see printed 3
     (display 2)))
 

@@ -46,3 +46,19 @@ dlist_map([], _) -> ok;
 dlist_map([X|Xs], Fun) ->
     delement_set(X, Fun(delement_get(X))),
     dlist_map(Xs, Fun).
+	
+%Esame 16/01/2018
+main() ->
+    X = spawn(fun() -> logger() end),
+    [spawn(fun() -> loggee(X, Y) end) || Y <- ["A","B","A","B","A","B"]].
+logger() ->
+    receive
+        {log, K, Y} ->
+            io:format("log: ~w ~p~n", [K, Y]),
+            logger()
+    end.
+loggee(X, Y) ->
+	receive
+		after rand:uniform(100) -> 
+		X ! {log, self(), Y}
+	end.

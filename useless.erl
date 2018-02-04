@@ -69,3 +69,49 @@ beach(Temperature) ->
 		_ ->
 			'avoid beach'
 	end.
+	
+	
+%%messages
+worker(Dad, List, X) ->
+    case lists:member(X, List) of
+        true ->  Dad ! {found, List};
+        false -> Dad ! nay
+    end.
+get_result(0) -> false;
+get_result(V) -> 
+    receive 
+        nay -> get_result(V-1);
+        {found, L} -> L
+    end.
+parfind(LofL, X) ->
+    lists:foreach(fun(L) ->
+                          spawn(?MODULE, worker, [self(), L, X])
+                  end,
+                  LofL),
+    get_result(length(LofL)).
+	
+send(Message) ->
+	self() ! {messaggio, Message},
+	io:format("spedito").
+
+get_message() ->
+	io:format("Boh"),
+	receive
+		{messaggio, M} -> io:format(M)
+	end.
+
+%%spawn
+send2(Dad,Message) ->
+	Dad ! {messaggio, Message},
+	io:format("spedito").
+get_message2() ->
+	io:format("Boh"),
+	receive
+		{messaggio, M} -> M
+	end.
+father(N) ->
+	spawn(?MODULE, send2, [self(),N]),
+	get_message2().
+	
+son(0) -> io:format("Minore di 0");
+son(N) -> io:format("Maggiore di 0").
